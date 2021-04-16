@@ -12,14 +12,15 @@ const server = app.listen(app.get('PORT'), () => {
 
 app.get('/' , (req , res)=>{
     let date = new Date();
+    console.log(date);
     if(date.getHours() >= 6 && date.getHours() <= 12){
-        res.end('Buenos dias!');
+        res.send('Buenos dias!');
     }
     if(date.getHours() >= 13 && date.getHours() <= 19){
-        res.end('Buenos tardes!');
+        res.send('Buenos tardes!');
     }
-    if (date.getHours() >= 20 && date.getHours() <= 5) {
-        res.end('Buenos noches!');
+    if (date.getHours() >= 20) {
+        res.send('Buenos noches!');
     }
 });
 
